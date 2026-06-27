@@ -128,9 +128,9 @@
 
 <input type="hidden" name="form-name" value="contact">
 
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Tell us what you need" required></textarea>
+<input type="text" name="name" data-placeholder="form_name" required>
+<input type="email" name="email" data-placeholder="form_email" required>
+<textarea name="message" data-placeholder="form_message" required></textarea>
 
 <button type="submit" data-i18n="cta"></button>
 
@@ -254,6 +254,10 @@ const translations = {
     contact_title: "Kontakt os",
     contact_intro: "Få et gratis og uforpligtende tilbud.",
 
+    form_name: "Dit navn",
+    form_email: "Din email",
+    form_message: "Fortæl os hvad du har brug for",
+
     channels_title: "Kommunikationskanaler",
     channels_text: "Facebook • Email • WhatsApp • LinkedIn",
 
@@ -306,6 +310,10 @@ const translations = {
     contact_title: "Get In Touch with Us",
     contact_intro: "Get a free, no-obligation quote today.",
 
+    form_name: "Your Name",
+    form_email: "Your Email",
+    form_message: "Tell us what you need",
+
     channels_title: "Communication Channels",
     channels_text: "Facebook • Email • WhatsApp • LinkedIn",
 
@@ -324,6 +332,11 @@ function setLang(lang) {
   });
 
   localStorage.setItem("lang", lang);
+
+  document.querySelectorAll("[data-placeholder]").forEach(el => {
+  const key = el.getAttribute("data-placeholder");
+  if (dict[key]) el.placeholder = dict[key];
+});
 }
 
 document.addEventListener("DOMContentLoaded", () => {
