@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,106 +9,327 @@
 
 <body>
 
-<header class="hero">
-    <div class="overlay">
-        <h1>Professional Cleaning<br>for Businesses</h1>
+<!-- TOP BAR -->
+<header class="topbar">
+    <div class="logo">
+        <img src="office.jpg" alt="KlarNord Logo">
+    </div>
 
-        <p>Clean workplaces. Productive spaces.</p>
-
-        <a href="#contact" class="btn">
-            Get a Free Quote
-        </a>
+    <div class="lang-switch">
+        <button onclick="setLang('da')">DA</button>
+        <button onclick="setLang('en')">EN</button>
     </div>
 </header>
 
+<!-- HERO -->
+<header class="hero">
+    <div class="overlay">
+
+        <h1 data-i18n="hero_title"></h1>
+        <p data-i18n="hero_sub"></p>
+        <p class="hero-text" data-i18n="hero_text"></p>
+
+        <a href="#contact" class="btn" data-i18n="cta"></a>
+
+    </div>
+</header>
+
+<!-- ABOUT -->
 <section class="about">
-
-<h2>About Us</h2>
-
-<p>
-We help businesses maintain clean,
-healthy and professional environments
-that leave a lasting impression.
-</p>
-
+<h2 data-i18n="about_title"></h2>
+<p data-i18n="about_text"></p>
 </section>
 
+<!-- SERVICES -->
 <section class="services">
 
-<h2>Our Services</h2>
+<h2 data-i18n="services_title"></h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Office Cleaning</h3>
-<p>Professional office maintenance.</p>
+<h3 data-i18n="services_res_title_1"></h3>
+<p data-i18n="services_res_text_1"></p>
 </div>
 
 <div class="card">
-<h3>Workplace Cleaning</h3>
-<p>Reliable cleaning schedules.</p>
+<h3 data-i18n="services_res_title_2"></h3>
+<p data-i18n="services_res_text_2"></p>
 </div>
 
 <div class="card">
-<h3>Small Business Cleaning</h3>
-<p>Flexible cleaning solutions.</p>
+<h3 data-i18n="services_res_title_3"></h3>
+<p data-i18n="services_res_text_3"></p>
 </div>
 
+</div>
+</section>
+
+<!-- TESTIMONIALS (NEW) -->
+<section class="testimonials">
+
+<h2 data-i18n="testimonials_title"></h2>
+
+<div class="testimonial-slider">
+
+<div class="testimonial active">
+<p data-i18n="testimonial_1"></p>
+<span data-i18n="testimonial_role_1"></span>
+</div>
+
+<div class="testimonial">
+<p data-i18n="testimonial_2"></p>
+<span data-i18n="testimonial_role_2"></span>
+</div>
+
+<div class="testimonial">
+<p data-i18n="testimonial_3"></p>
+<span data-i18n="testimonial_role_3"></span>
+</div>
+
+</div>
+
+<div class="dots">
+<span class="dot active" onclick="showTestimonial(0)"></span>
+<span class="dot" onclick="showTestimonial(1)"></span>
+<span class="dot" onclick="showTestimonial(2)"></span>
 </div>
 
 </section>
 
+<!-- WHY -->
 <section class="why">
 
-<h2>Why Choose KlarNord?</h2>
+<h2 data-i18n="why_title"></h2>
 
-<ul>
-<li>✔ Reliable & Trusted</li>
-<li>✔ Professional Team</li>
-<li>✔ Personal Service</li>
-<li>✔ Attention to Detail</li>
-<li>✔ Flexible Scheduling</li>
-</ul>
+<p><strong data-i18n="why_sub"></strong></p>
+
+<div class="why-grid">
+
+<div class="why-item" data-i18n="why_1"></div>
+<div class="why-item" data-i18n="why_2"></div>
+<div class="why-item" data-i18n="why_3"></div>
+<div class="why-item" data-i18n="why_4"></div>
+<div class="why-item" data-i18n="why_5"></div>
+<div class="why-item" data-i18n="why_6"></div>
+
+</div>
 
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
 
-<h2>Get In Touch with Us</h2>
+<h2 data-i18n="contact_title"></h2>
+
+<p data-i18n="contact_intro"></p>
 
 <form name="contact" method="POST" data-netlify="true">
 
 <input type="hidden" name="form-name" value="contact">
 
-<input
-type="text"
-name="name"
-placeholder="Your Name"
-required>
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Tell us what you need" required></textarea>
 
-<input
-type="email"
-name="email"
-placeholder="Your Email"
-required>
-
-<textarea
-name="message"
-placeholder="Tell us what you need"
-required>
-</textarea>
-
-<button type="submit">
-Send Request
-</button>
+<button type="submit" data-i18n="cta"></button>
 
 </form>
+
+<!-- CONTACT INFO -->
+<div class="contact-extra">
+
+<div class="contact-channels">
+
+<h3 data-i18n="channels_title"></h3>
+
+<div class="channel-grid">
+
+<a class="channel whatsapp"
+   href="https://wa.me/45353504989"
+   target="_blank">
+
+<div class="label">WhatsApp</div>
+<div class="value">+45 53 50 49 89</div>
+
+</a>
+
+<a class="channel email"
+   href="mailto:klarnord.dk@gmail.com">
+
+<div class="label">Email</div>
+<div class="value">klarnord.dk@gmail.com</div>
+
+</a>
+
+<a class="channel facebook"
+   href="https://www.facebook.com/">
+
+<div class="label">Facebook</div>
+<div class="value">klaNord</div>
+
+</a>
+
+</div>
+
+</div>
+
+<h3 data-i18n="hours_title"></h3>
+<p style="white-space:pre-line" data-i18n="hours"></p>
+
+</div>
 
 </section>
 
 <footer>
 <p>© 2026 KlarNord</p>
 </footer>
+
+<script>
+const testimonials = document.querySelectorAll(".testimonial");
+const dots = document.querySelectorAll(".dot");
+let index = 0;
+
+function showTestimonial(i){
+    testimonials.forEach(t => t.classList.remove("active"));
+    dots.forEach(d => d.classList.remove("active"));
+
+    testimonials[i].classList.add("active");
+    dots[i].classList.add("active");
+
+    index = i;
+}
+
+function autoSlide(){
+    index = (index + 1) % testimonials.length;
+    showTestimonial(index);
+}
+
+setInterval(autoSlide, 6000);
+</script>
+
+<script>
+const translations = {
+  da: {
+    hero_title: "Professionel rengøring til hjem og virksomheder",
+    hero_sub: "Pålidelig. Professionel. Personlig.",
+    hero_text:
+      "Uanset om det er dit hjem, kontor eller en ejendom du skal fraflytte, leverer KlarNord professionel rengøring med stor omhu og en personlig tilgang du kan stole på.",
+
+    cta: "Få et gratis tilbud",
+
+    about_title: "Om os",
+    about_text:
+      "KlarNord blev grundlagt på en simpel idé: professionel rengøring skal være pålidelig og personlig.",
+
+    services_title: "Vores services",
+
+    services_res_title_1: "Privat rengøring",
+    services_res_text_1: "Kom hjem til et rent og behageligt hjem.",
+
+    services_res_title_2: "Erhvervsrengøring",
+    services_res_text_2: "Professionelle løsninger til virksomheder.",
+
+    services_res_title_3: "Fraflytningsrengøring",
+    services_res_text_3: "Grundig rengøring ved flytning.",
+
+    testimonials_title: "Kundeudtalelser",
+    testimonial_1: "Meget pålidelig og professionel service. Alt var perfekt.",
+    testimonial_2: "Fantastisk kommunikation og stor opmærksomhed på detaljer.",
+    testimonial_3: "Den bedste rengøringsservice vi har brugt.",
+    testimonial_role_1: "Privat kunde",
+    testimonial_role_2: "Kontor kunde",
+    testimonial_role_3: "Ejendomsadministrator",
+
+    why_title: "Hvorfor vælge KlarNord?",
+    why_sub: "Mere end rengøring. En service du kan stole på.",
+
+    why_1: "Pålidelig og punktlig service",
+    why_2: "Høj kvalitet",
+    why_3: "Personlig service",
+    why_4: "Opmærksomhed på detaljer",
+    why_5: "Fleksible tider",
+    why_6: "Gennemsigtig kommunikation",
+
+    contact_title: "Kontakt os",
+    contact_intro: "Få et gratis og uforpligtende tilbud.",
+
+    channels_title: "Kommunikationskanaler",
+    channels_text: "Facebook • Email • WhatsApp • LinkedIn",
+
+    hours_title: "Åbningstider",
+    hours:
+      "Mandag – torsdag: 07:00 – 18:00\nFredag: 07:00 – 16:00\nLørdag: 09:00 – 14:00\nSøndag: Lukket"
+  },
+
+  en: {
+    hero_title: "Professional Cleaning for Homes & Businesses",
+    hero_sub: "Reliable. Professional. Personal.",
+    hero_text:
+      "Whether it's your home, office, or property you're preparing to move out of, KlarNord delivers professional cleaning services with exceptional attention to detail.",
+
+    cta: "Get a Free Quote",
+
+    about_title: "About Us",
+    about_text:
+      "KlarNord was founded on a simple belief: professional cleaning should be reliable and personal.",
+
+    services_title: "Our Services",
+
+    services_res_title_1: "Residential Cleaning",
+    services_res_text_1: "Come home to a clean and comfortable space.",
+
+    services_res_title_2: "Commercial Cleaning",
+    services_res_text_2: "Professional cleaning for businesses.",
+
+    services_res_title_3: "Move-Out Cleaning",
+    services_res_text_3: "Deep cleaning for stress-free moving.",
+
+    testimonials_title: "What Our Clients Say",
+    testimonial_1: "Very professional and reliable service. Everything was spotless.",
+    testimonial_2: "Excellent communication and great attention to detail.",
+    testimonial_3: "Best cleaning service we’ve used.",
+    testimonial_role_1: "Private Client",
+    testimonial_role_2: "Office Client",
+    testimonial_role_3: "Property Manager",
+
+    why_title: "Why Choose KlarNord?",
+    why_sub: "More Than Cleaning. A Service You Can Trust.",
+
+    why_1: "Reliable and punctual service",
+    why_2: "High-quality standards",
+    why_3: "Friendly service",
+    why_4: "Attention to detail",
+    why_5: "Flexible scheduling",
+    why_6: "Transparent communication",
+
+    contact_title: "Get In Touch with Us",
+    contact_intro: "Get a free, no-obligation quote today.",
+
+    channels_title: "Communication Channels",
+    channels_text: "Facebook • Email • WhatsApp • LinkedIn",
+
+    hours_title: "Opening Hours",
+    hours:
+      "Monday – Thursday: 07:00 – 18:00\nFriday: 07:00 – 16:00\nSaturday: 09:00 – 14:00\nSunday: Closed"
+  }
+};
+
+function setLang(lang) {
+  const dict = translations[lang];
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key]) el.textContent = dict[key];
+  });
+
+  localStorage.setItem("lang", lang);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setLang(localStorage.getItem("lang") || "da");
+});
+</script>
 
 </body>
 </html>
