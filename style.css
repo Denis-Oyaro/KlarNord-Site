@@ -2,9 +2,9 @@
    DESIGN TOKENS
 ========================================== */
 :root {
-  --blue: #0057ff;
-  --blue-hover: #0046d5;
-  --blue-light: #eff4ff;
+  --blue: #008cdc;
+  --blue-hover: #0078bb;
+  --blue-light: #e6f4fd;
   --dark: #0f172a;
   --text: #4b5563;
   --text-muted: #9ca3af;
@@ -15,7 +15,7 @@
   --radius-sm: 10px;
   --shadow-sm: 0 2px 8px rgba(15,23,42,0.06);
   --shadow: 0 8px 32px rgba(15,23,42,0.10);
-  --shadow-blue: 0 8px 28px rgba(0,87,255,0.30);
+  --shadow-blue: 0 8px 28px rgba(0,140,220,0.30);
   --transition: 0.2s ease;
 }
 
@@ -206,14 +206,13 @@ section {
   border: none;
   cursor: pointer;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: var(--shadow-blue);
   white-space: nowrap;
 }
 
 .btn:hover {
   background: var(--blue-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 36px rgba(0,87,255,0.40);
+  box-shadow: var(--shadow);
 }
 
 /* ==========================================
@@ -272,6 +271,40 @@ section {
   background: var(--bg);
 }
 
+.about-subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+.about-body {
+  font-size: 16px;
+  color: var(--text);
+  max-width: 680px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about-mission-lead {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--blue);
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.about-mission {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark);
+  max-width: 600px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
 /* ==========================================
    SERVICES
 ========================================== */
@@ -324,6 +357,61 @@ section {
   font-size: 15px;
   margin-bottom: 24px;
   line-height: 1.7;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.card-body {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.card-tagline {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.promise-block {
+  margin-top: 64px;
+  padding: 40px 48px;
+  background: var(--dark);
+  border-radius: var(--radius);
+  color: white;
+}
+
+.promise-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.promise-title {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.promise-body {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  max-width: 680px;
+  margin-bottom: 10px;
 }
 
 .card-link {
@@ -440,6 +528,24 @@ section {
   background: var(--bg);
 }
 
+.why-body {
+  font-size: 16px;
+  color: var(--text);
+  max-width: 680px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.why-sets-apart {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--blue);
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -472,7 +578,7 @@ section {
   height: 26px;
   min-width: 26px;
   background: var(--blue-light)
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230057ff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23008cdc' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E")
     center / 14px no-repeat;
   border-radius: 50%;
 }
@@ -529,7 +635,7 @@ input, textarea {
 
 input:focus, textarea:focus {
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(0, 87, 255, 0.10);
+  box-shadow: 0 0 0 3px rgba(0, 140, 220, 0.12);
   background: var(--bg);
 }
 
