@@ -655,22 +655,6 @@ function setLang(lang) {
 document.addEventListener("DOMContentLoaded", () => {
   setLang(localStorage.getItem("lang") || "da");
 });
-
-// TEMP DIAGNOSTIC
-window.addEventListener("load", () => {
-  const vw = document.documentElement.clientWidth;
-  const found = [];
-  document.querySelectorAll("*").forEach(el => {
-    const r = el.getBoundingClientRect();
-    if (r.right > vw + 1) {
-      found.push((el.className || el.tagName) + " → " + Math.round(r.right) + "px (viewport " + vw + "px)");
-    }
-  });
-  const box = document.createElement("div");
-  box.style.cssText = "position:fixed;bottom:0;left:0;right:0;background:#c00;color:#fff;font-size:12px;padding:10px 14px;z-index:99999;white-space:pre-line;max-height:50vh;overflow-y:auto;";
-  box.textContent = found.length ? found.join("\n") : "✓ No overflow detected";
-  document.body.appendChild(box);
-});
 </script>
 
 </body>
