@@ -658,6 +658,18 @@ footer {
   line-height: 1.6;
 }
 
+.footer-address {
+  margin-top: 16px !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  line-height: 1.7 !important;
+}
+
+.footer-cvr {
+  color: rgba(255, 255, 255, 0.35) !important;
+  font-size: 13px !important;
+  margin-top: 4px !important;
+}
+
 .footer-links {
   display: flex;
   flex-direction: column;
