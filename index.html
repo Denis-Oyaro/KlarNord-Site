@@ -390,10 +390,35 @@ function showTestimonial(i) {
   testimonialIndex = i;
 }
 
-setInterval(() => {
-  testimonialIndex = (testimonialIndex + 1) % testimonials.length;
-  showTestimonial(testimonialIndex);
-}, 6000);
+let autoplay = setInterval(advance, 6000);
+
+function advance() {
+  showTestimonial((testimonialIndex + 1) % testimonials.length);
+}
+
+function resetAutoplay() {
+  clearInterval(autoplay);
+  autoplay = setInterval(advance, 6000);
+}
+
+// Touch swipe
+const slider = document.querySelector(".testimonial-slider");
+let touchStartX = 0;
+
+slider.addEventListener("touchstart", e => {
+  touchStartX = e.changedTouches[0].clientX;
+  clearInterval(autoplay);
+}, { passive: true });
+
+slider.addEventListener("touchend", e => {
+  const delta = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(delta) > 50) {
+    showTestimonial(delta > 0
+      ? (testimonialIndex + 1) % testimonials.length
+      : (testimonialIndex - 1 + testimonials.length) % testimonials.length);
+  }
+  resetAutoplay();
+}, { passive: true });
 
 // Scroll fade-in animations
 const observer = new IntersectionObserver((entries) => {
